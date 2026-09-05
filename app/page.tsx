@@ -13,7 +13,7 @@ export default function Home() {
   const embedSrc = getLiveEmbedSrc();
 
   return (
-    <div className="mx-auto w-full max-w-3xl px-5 sm:px-8">
+    <div className="home-dusk mx-auto w-full max-w-3xl px-5 sm:px-8">
       <a
         href="#live"
         className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-5 focus:z-10 focus:bg-panel focus:px-3 focus:py-2 focus:text-sm"
