@@ -3,13 +3,20 @@ import { SITE } from "@/lib/site";
 
 type LiveProps = {
   embedSrc: string | null;
+  index?: string;
+  title?: string;
+  showYoutubeLink?: boolean;
 };
 
-// TODO: OBS — a scene-ready crop of this embed / lower-third. See ROADMAP.md.
-export function Live({ embedSrc }: LiveProps) {
+export function Live({
+  embedSrc,
+  index = "01",
+  title = "Live",
+  showYoutubeLink = false,
+}: LiveProps) {
   return (
     <section id="live" aria-labelledby="live-heading" className="scroll-mt-8">
-      <SectionLabel id="live-heading" index="01" title="Live" />
+      <SectionLabel id="live-heading" index={index} title={title} />
       <div className="mt-6 overflow-hidden rounded-sm border border-rule bg-panel">
         {embedSrc ? (
           <div className="relative aspect-video bg-night">
@@ -33,6 +40,18 @@ export function Live({ embedSrc }: LiveProps) {
           </div>
         )}
       </div>
+      {showYoutubeLink ? (
+        <p className="mt-4 text-sm text-mute">
+          Watch on YouTube{" "}
+          <a
+            href={SITE.youtubeUrl}
+            className="text-ink underline decoration-rule underline-offset-4 transition-colors hover:decoration-lamp"
+          >
+            {SITE.youtubeHandle}
+          </a>
+          .
+        </p>
+      ) : null}
     </section>
   );
 }

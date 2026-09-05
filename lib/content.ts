@@ -1,14 +1,21 @@
+import eventsFile from "@/content/events.json";
 import scheduleFile from "@/content/schedule.json";
 import shipsFile from "@/content/ships.json";
-import type { Episode, ScheduleFile, Ship, ShipsFile } from "@/lib/types";
+import type {
+  Episode,
+  EventsFile,
+  NightEvent,
+  ScheduleFile,
+  Ship,
+  ShipsFile,
+} from "@/lib/types";
 
 // TODO: Sheets sync — fetch the same Episode[] from a Google Sheet and
-// fall back to this JSON. See ROADMAP.md.
-// TODO: Richer ship tracking — keep Ship as the contract when this moves
-// to an API or database. See ROADMAP.md.
+// fall back to the local schedule file. See ROADMAP.md.
 
 const schedule = scheduleFile as ScheduleFile;
 const shipsData = shipsFile as ShipsFile;
+const eventsData = eventsFile as EventsFile;
 
 export function getEpisodes(): Episode[] {
   return [...schedule.episodes].sort((a, b) => a.date.localeCompare(b.date));
@@ -22,4 +29,16 @@ export function getUpcomingEpisodes(limit = 14): Episode[] {
 
 export function getShips(): Ship[] {
   return [...shipsData.ships].sort((a, b) => b.date.localeCompare(a.date));
+}
+
+export function getProgressForDate(date: string): Ship[] {
+  return getShips().filter((item) => item.date === date);
+}
+
+export function getEvents(): NightEvent[] {
+  return [...eventsData.events];
+}
+
+export function getEvent(slug: string): NightEvent | undefined {
+  return eventsData.events.find((event) => event.slug === slug);
 }

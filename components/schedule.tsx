@@ -1,4 +1,5 @@
-import { formatEpisodeDate, relativeDayLabel } from "@/lib/dates";
+import Link from "next/link";
+import { formatEpisodeDate, publicNightStatusLabel } from "@/lib/dates";
 import type { Episode } from "@/lib/types";
 import { SectionLabel } from "@/components/section-label";
 
@@ -26,28 +27,31 @@ export function Schedule({ episodes }: ScheduleProps) {
 }
 
 function EpisodeRow({ episode }: { episode: Episode }) {
-  const relative = relativeDayLabel(episode.date);
   const dateLabel = formatEpisodeDate(episode.date);
+  const statusLabel = publicNightStatusLabel(episode.date);
+  const question = (
+    <h3 className="font-serif text-xl leading-snug text-ink sm:text-[1.35rem]">
+      {episode.slug ? (
+        <Link
+          href={`/events/${episode.slug}`}
+          className="underline decoration-rule underline-offset-4 transition-colors hover:decoration-lamp"
+        >
+          {episode.question}
+        </Link>
+      ) : (
+        episode.question
+      )}
+    </h3>
+  );
 
   return (
     <article className="grid gap-2 sm:grid-cols-[5.5rem_8.5rem_1fr] sm:items-baseline sm:gap-6">
       <p className="text-[0.68rem] tracking-[0.18em] uppercase text-lamp">
-        {episode.status}
+        {statusLabel}
       </p>
-      <p className="text-sm text-mute">
-        {relative ? (
-          <>
-            <span className="text-ink">{relative}</span>
-            <span className="text-mute"> · {dateLabel}</span>
-          </>
-        ) : (
-          dateLabel
-        )}
-      </p>
+      <p className="text-sm text-mute">{dateLabel}</p>
       <div>
-        <h3 className="font-serif text-xl leading-snug text-ink sm:text-[1.35rem]">
-          {episode.question}
-        </h3>
+        {question}
         {episode.notes ? (
           <p className="mt-1.5 text-sm leading-relaxed text-mute">
             {episode.notes}

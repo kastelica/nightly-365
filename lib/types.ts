@@ -13,6 +13,25 @@ export type Episode = {
   question: string;
   status: EpisodeStatus;
   notes?: string;
+  /** When set, the upcoming list links to `/events/[slug]`. */
+  slug?: string;
+};
+
+export type NightEvent = {
+  slug: string;
+  /** Calendar date in Pacific Time, YYYY-MM-DD. */
+  date: string;
+  question: string;
+  /** Short “what this night is” blurb. */
+  blurb: string;
+  /** How to join in / help. Falls back to SITE.join when omitted. */
+  join?: string;
+  /** Real ticket URL later. Omit or leave empty for “coming soon”. */
+  ticketUrl?: string;
+};
+
+export type EventsFile = {
+  events: NightEvent[];
 };
 
 export type Ship = {

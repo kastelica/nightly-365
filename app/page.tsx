@@ -1,7 +1,7 @@
 import { Hero } from "@/components/hero";
 import { Live } from "@/components/live";
+import { Progress } from "@/components/progress";
 import { Schedule } from "@/components/schedule";
-import { ShipLog } from "@/components/ship-log";
 import { SiteFooter } from "@/components/site-footer";
 import { getShips, getUpcomingEpisodes } from "@/lib/content";
 import { SITE } from "@/lib/site";
@@ -9,7 +9,7 @@ import { getLiveEmbedSrc } from "@/lib/youtube";
 
 export default function Home() {
   const episodes = getUpcomingEpisodes(14);
-  const ships = getShips();
+  const progress = getShips();
   const embedSrc = getLiveEmbedSrc();
 
   return (
@@ -24,7 +24,7 @@ export default function Home() {
       <main className="mt-20 flex flex-col gap-20 pb-6 sm:mt-24 sm:gap-24">
         <Live embedSrc={embedSrc} />
         <Schedule episodes={episodes} />
-        <ShipLog ships={ships} />
+        <Progress items={progress} />
       </main>
       <p className="sr-only">
         {SITE.name} streams {SITE.whenShort}.

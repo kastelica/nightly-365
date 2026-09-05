@@ -2,8 +2,12 @@ export const SITE = {
   name: "Nightly 365",
   eyebrow: "The show",
   pitch:
-    "One hard question a night. Chat, callers, AI, and the community think it through. Ideas ship the same night.",
+    "One hard question a night. Chat, callers, AI, and the community think it through. Join in, help, and follow along as ideas move forward.",
   when: "Every night · 6:00 PM PT / 9:00 PM ET",
+  whenClock: "6:00 PM PT / 9:00 PM ET",
   whenShort: "every night at 6pm PT",
-  benevolence: "Think clearly. Ship something kind.",
+  youtubeUrl: "https://www.youtube.com/@Nightly365",
+  youtubeHandle: "@Nightly365",
+  join: "This is a conversation, not a lecture. Come to the live chat. Bring a thought, a doubt, or a small idea. Help us think it through — or follow along if you cannot be there live.",
+  benevolence: "Think clearly. Do something kind.",
 } as const;
