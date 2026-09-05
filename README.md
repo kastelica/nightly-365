@@ -2,13 +2,13 @@
 
 A collaborative YouTube livestream every night at **6:00 PM PT / 9:00 PM ET**.
 
-Aaron holds one hard question. Chat, callers, AI, and the community think it through. Ideas ship the same night.
+One hard question. Chat, callers, AI, and the community think it through. Join in, help, and follow along as ideas move forward.
 
-This repo is the public house: live embed, upcoming questions, and a ship log of what each night produced.
+This page is the public house: the live stream, the questions coming up, and what came out of each night.
 
 Tone: good and benevolent.
 
-## Run locally
+## Preview on your computer
 
 ```bash
 npm install
@@ -24,11 +24,13 @@ npm start        # serve the build
 npm run lint
 ```
 
-## Set the YouTube live embed
+## Point the live picture at YouTube
 
 The Live section needs a channel or a video/live URL. **Do not invent a channel id.** If nothing is set, the page shows:
 
 > Going live soon · every night at 6pm PT
+
+The show’s YouTube is [@Nightly365](https://www.youtube.com/@Nightly365) (channel id `UCOUzJ_pTutd43MKGP2Jsb5g`).
 
 Copy `.env.example` to `.env.local` and set **one** of:
 
@@ -46,31 +48,30 @@ A channel id becomes the standard live embed:
 
 `https://www.youtube.com/embed/live_stream?channel=CHANNEL_ID`
 
-On Vercel, add the same variable in **Project → Settings → Environment Variables**, then redeploy.
+Where the site is hosted, add the same variable in the project’s environment settings, then refresh the live site.
 
-## Edit schedule and ships during a stream
+## Update questions, progress, and nights
 
-Content lives in two JSON files. They are the obvious place to update mid-show. Details and a ship example are in [`content/README.md`](content/README.md).
+The homepage and each night’s page read from a few content files. Change a file when the show needs an update. Details and examples are in [`content/README.md`](content/README.md).
 
 | File | What it is |
 | --- | --- |
-| [`content/schedule.json`](content/schedule.json) | Upcoming nights: date (PT), question, `next` / `queued` / `aired`, optional notes |
-| [`content/ships.json`](content/ships.json) | What we built: date, episode question, title, link, note |
+| [`content/schedule.json`](content/schedule.json) | Upcoming nights: date (PT), question, `next` / `queued` / `aired`, optional notes, optional `slug` |
+| [`content/events.json`](content/events.json) | Night pages at `/events/[slug]`: question, blurb, how to join, optional ticket link |
+| [`content/ships.json`](content/ships.json) | What came out of a night: date, question, title, link, note |
 
 1. Edit the file.
-2. Commit and push to `main` (or open a PR).
-3. Vercel rebuilds the site.
+2. Save the change so the public page can refresh.
+3. Keep one episode as `next`. After the night, mark it `aired` and make tomorrow `next`.
 
-Keep one episode as `next`. After air, mark it `aired` and promote tomorrow.
+A night in the upcoming list links to its page when it has a `slug` that matches `content/events.json`.
 
-The TypeScript types in [`lib/types.ts`](lib/types.ts) match these files so a later API or database can replace the JSON without rewriting the page.
+## Put the page online
 
-## Deploy on Vercel
-
-1. Import [github.com/kastelica/nightly-365](https://github.com/kastelica/nightly-365) in Vercel (Next.js is detected).
+1. Import this project in your host (Next.js is detected).
 2. Add `NEXT_PUBLIC_YOUTUBE_CHANNEL_ID` or `NEXT_PUBLIC_YOUTUBE_LIVE_URL`.
-3. Deploy. Framework preset: Next.js. Build command: `npm run build`.
+3. Publish. Framework preset: Next.js.
 
 ## What’s out of scope (v1)
 
-OBS, auth, CMS, Google Sheets sync, Zoom guests. See [ROADMAP.md](ROADMAP.md).
+OBS, sign-in, a separate editor, Google Sheets sync, Zoom guests, ticket checkout. See [ROADMAP.md](ROADMAP.md).

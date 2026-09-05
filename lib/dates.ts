@@ -34,3 +34,37 @@ export function relativeDayLabel(isoDate: string, now = new Date()): string | nu
   if (isoDate === addUtcDays(today, 1)) return "Tomorrow";
   return null;
 }
+
+export type PublicNightStatus = "tonight" | "upcoming" | "past";
+
+/** Audience-facing status from the calendar date in Pacific Time. */
+export function publicNightStatus(
+  isoDate: string,
+  now = new Date(),
+): PublicNightStatus {
+  const today = todayInPT(now);
+  if (isoDate === today) return "tonight";
+  if (isoDate < today) return "past";
+  return "upcoming";
+}
+
+export function publicNightStatusLabel(
+  isoDate: string,
+  now = new Date(),
+): string {
+  const status = publicNightStatus(isoDate, now);
+  if (status === "tonight") return "Tonight";
+  if (status === "past") return "Past";
+  return "Upcoming";
+}
+
+/** Long weekday label for a YYYY-MM-DD civil date, no timezone shift. */
+export function formatEpisodeDateLong(isoDate: string): string {
+  const [year, month, day] = isoDate.split("-").map(Number);
+  return new Intl.DateTimeFormat("en-US", {
+    weekday: "long",
+    month: "short",
+    day: "numeric",
+    timeZone: "UTC",
+  }).format(new Date(Date.UTC(year, month - 1, day)));
+}
