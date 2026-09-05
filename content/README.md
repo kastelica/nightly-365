@@ -28,7 +28,7 @@ What we built tonight.
       "date": "2026-09-05",
       "episodeQuestion": "How can AI make us all money?",
       "title": "Nightly 365 public site",
-      "link": "https://github.com/kastelica/nightly-365",
+      "link": "https://www.youtube.com/@Nightly365",
       "note": "The house we gather in."
     }
   ]

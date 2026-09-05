@@ -4,7 +4,7 @@ v1 is a public page plus two local files. These are next, not now.
 
 ## Sheets sync for questions
 
-Pull the question bank from a Google Sheet so Aaron can edit live without a git commit.
+Pull the question bank from a Google Sheet so questions can be edited live without a git commit.
 
 - Keep `Episode` in `lib/types.ts` as the contract.
 - Add a fetch path beside `lib/content.ts` (Sheet → same objects).

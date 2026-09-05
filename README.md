@@ -2,7 +2,7 @@
 
 A collaborative YouTube livestream every night at **6:00 PM PT / 9:00 PM ET**.
 
-Aaron holds one hard question. Chat, callers, AI, and the community think it through. Ideas ship the same night.
+One hard question. Chat, callers, AI, and the community think it through.
 
 This repo is the public house: live embed, upcoming questions, and a ship log of what each night produced.
 
@@ -67,7 +67,7 @@ The TypeScript types in [`lib/types.ts`](lib/types.ts) match these files so a la
 
 ## Deploy on Vercel
 
-1. Import [github.com/kastelica/nightly-365](https://github.com/kastelica/nightly-365) in Vercel (Next.js is detected).
+1. Import this GitHub repo in Vercel (Next.js is detected).
 2. Add `NEXT_PUBLIC_YOUTUBE_CHANNEL_ID` or `NEXT_PUBLIC_YOUTUBE_LIVE_URL`.
 3. Deploy. Framework preset: Next.js. Build command: `npm run build`.
 
