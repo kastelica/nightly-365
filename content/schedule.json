@@ -1,0 +1,96 @@
+{
+  "timezone": "America/Los_Angeles",
+  "airTime": "18:00",
+  "episodes": [
+    {
+      "id": "2026-09-05",
+      "date": "2026-09-05",
+      "question": "How can AI make us all money?",
+      "status": "next",
+      "notes": "Opening night. One hard question. We think it through together."
+    },
+    {
+      "id": "2026-09-06",
+      "date": "2026-09-06",
+      "question": "What does a good status look like when nobody is watching?",
+      "status": "queued",
+      "notes": "Status, dignity, and the work we do offstage."
+    },
+    {
+      "id": "2026-09-07",
+      "date": "2026-09-07",
+      "question": "How do we stay friends across a hard disagreement?",
+      "status": "queued",
+      "notes": "Friendship that can hold tension without breaking."
+    },
+    {
+      "id": "2026-09-08",
+      "date": "2026-09-08",
+      "question": "What would a more civic internet look like by morning?",
+      "status": "queued",
+      "notes": "Civic life, not just content."
+    },
+    {
+      "id": "2026-09-09",
+      "date": "2026-09-09",
+      "question": "What should we do with the latest AI — tonight?",
+      "status": "queued",
+      "notes": "The newest tools, used with care."
+    },
+    {
+      "id": "2026-09-10",
+      "date": "2026-09-10",
+      "question": "How do we make the social web feel like a living room again?",
+      "status": "queued",
+      "notes": "Social space that is human-sized."
+    },
+    {
+      "id": "2026-09-11",
+      "date": "2026-09-11",
+      "question": "Who do we owe our attention to?",
+      "status": "queued"
+    },
+    {
+      "id": "2026-09-12",
+      "date": "2026-09-12",
+      "question": "What is enough?",
+      "status": "queued"
+    },
+    {
+      "id": "2026-09-13",
+      "date": "2026-09-13",
+      "question": "How can we be useful to people we will never meet?",
+      "status": "queued"
+    },
+    {
+      "id": "2026-09-14",
+      "date": "2026-09-14",
+      "question": "What should we stop automating?",
+      "status": "queued"
+    },
+    {
+      "id": "2026-09-15",
+      "date": "2026-09-15",
+      "question": "How do we teach kids to think with machines, not like them?",
+      "status": "queued"
+    },
+    {
+      "id": "2026-09-16",
+      "date": "2026-09-16",
+      "question": "What does neighborhood mean on the internet?",
+      "status": "queued"
+    },
+    {
+      "id": "2026-09-17",
+      "date": "2026-09-17",
+      "question": "Where should we put our surplus kindness?",
+      "status": "queued"
+    },
+    {
+      "id": "2026-09-18",
+      "date": "2026-09-18",
+      "question": "What is a good night?",
+      "status": "queued"
+    }
+  ]
+}
