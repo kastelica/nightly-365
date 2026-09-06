@@ -9,7 +9,7 @@ type SiteMarkProps = {
 };
 
 export function SiteMark({
-  size = 72,
+  size = 80,
   priority = false,
   className,
 }: SiteMarkProps) {
@@ -19,13 +19,14 @@ export function SiteMark({
       alt=""
       width={size}
       height={size}
+      sizes={`${size}px`}
       priority={priority}
       className={["rounded-full", className].filter(Boolean).join(" ")}
     />
   );
 }
 
-export function SiteBrandLink({ size = 40 }: { size?: number }) {
+export function SiteBrandLink({ size = 64 }: { size?: number }) {
   return (
     <Link
       href="/"
