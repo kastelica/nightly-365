@@ -30,9 +30,9 @@ One page per night (or special gathering) at `/events/[slug]`.
       "question": "How can AI make us all money?",
       "blurb": "What this night is.",
       "subquestions": [
-        "Who is “us all”?",
-        "What counts as money?",
-        "Who gets replaced?"
+        "If AI grows the pie while taking jobs, how do people still get a slice?",
+        "A citizens dividend from robot and compute permits — promising path or trap?",
+        "When the check shows up, what happens to work, status, and politics?"
       ],
       "join": "How to join in and help.",
       "ticketUrl": ""
