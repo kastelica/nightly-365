@@ -40,12 +40,7 @@ export function EventDetail({ event, embedSrc, progress }: EventDetailProps) {
       </header>
 
       <main className="mt-16 flex flex-col gap-20 pb-6 sm:mt-20 sm:gap-24">
-        <Live
-          embedSrc={embedSrc}
-          index="01"
-          title="Watch"
-          showYoutubeLink
-        />
+        <Live embedSrc={embedSrc} index="01" title="Watch" />
 
         <section
           id="join"
