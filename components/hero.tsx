@@ -4,8 +4,8 @@ import { SITE } from "@/lib/site";
 export function Hero() {
   return (
     <header className="pt-16 sm:pt-24">
-      <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:gap-7">
-        <SiteMark size={72} priority className="shrink-0" />
+      <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:gap-6">
+        <SiteMark size={80} priority className="h-16 w-16 shrink-0 sm:h-20 sm:w-20" />
         <div>
           <p className="text-[0.7rem] tracking-[0.28em] text-mute uppercase">
             {SITE.eyebrow}
