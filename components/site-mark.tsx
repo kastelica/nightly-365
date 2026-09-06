@@ -26,7 +26,7 @@ export function SiteMark({
   );
 }
 
-export function SiteBrandLink({ size = 56 }: { size?: number }) {
+export function SiteBrandLink({ size = 64 }: { size?: number }) {
   return (
     <Link
       href="/"
