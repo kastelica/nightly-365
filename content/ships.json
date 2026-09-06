@@ -1,3 +1,13 @@
 {
-  "ships": []
+  "ships": [
+    {
+      "id": "2026-09-05-slice",
+      "date": "2026-09-05",
+      "episodeQuestion": "How can AI make us all money?",
+      "title": "Slice",
+      "link": "https://slice-gules.vercel.app",
+      "note": "If a data center lands near you, see what a resident check could look like.",
+      "cta": "Try the number"
+    }
+  ]
 }

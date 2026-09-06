@@ -47,16 +47,18 @@ function EmptyProgress({ title, body }: { title: string; body: string }) {
 }
 
 function ProgressRow({ item }: { item: Ship }) {
-  const title = item.link ? (
-    <a
-      href={item.link}
-      className="font-serif text-xl leading-snug text-ink underline decoration-rule underline-offset-4 transition-colors hover:decoration-lamp"
-    >
-      {item.title}
-    </a>
-  ) : (
-    <span className="font-serif text-xl leading-snug text-ink">{item.title}</span>
-  );
+  const hasCta = Boolean(item.link && item.cta?.trim());
+  const title =
+    item.link && !hasCta ? (
+      <a
+        href={item.link}
+        className="font-serif text-xl leading-snug text-ink underline decoration-rule underline-offset-4 transition-colors hover:decoration-lamp"
+      >
+        {item.title}
+      </a>
+    ) : (
+      <span className="font-serif text-xl leading-snug text-ink">{item.title}</span>
+    );
 
   return (
     <article className="grid gap-2 sm:grid-cols-[8.5rem_1fr] sm:items-baseline sm:gap-6">
@@ -68,6 +70,14 @@ function ProgressRow({ item }: { item: Ship }) {
         </p>
         {item.note ? (
           <p className="mt-1.5 text-sm leading-relaxed text-ink/80">{item.note}</p>
+        ) : null}
+        {item.link && item.cta?.trim() ? (
+          <a
+            href={item.link}
+            className="mt-4 inline-block border border-lamp px-5 py-3 text-sm tracking-wide text-lamp transition-colors hover:bg-lamp/10"
+          >
+            {item.cta}
+          </a>
         ) : null}
       </div>
     </article>

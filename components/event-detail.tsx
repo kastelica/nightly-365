@@ -2,6 +2,7 @@ import { HowItWorks } from "@/components/how-it-works";
 import { IdeasWorthRepeating } from "@/components/ideas-worth-repeating";
 import { Live } from "@/components/live";
 import { Progress } from "@/components/progress";
+import { SliceCta } from "@/components/slice-cta";
 import { SectionLabel } from "@/components/section-label";
 import { SiteBrandLink } from "@/components/site-mark";
 import { SiteFooter } from "@/components/site-footer";
@@ -20,6 +21,7 @@ export function EventDetail({ event, embedSrc, progress }: EventDetailProps) {
   const join = event.join ?? SITE.join;
   const agenda = event.agenda?.length ? event.agenda : SITE.agenda;
   const doors = (event.subquestions ?? []).filter((question) => question.trim());
+  const madeSlice = progress.some((item) => item.link === SITE.slice.url);
 
   return (
     <div className="mx-auto w-full max-w-3xl px-5 sm:px-8">
@@ -79,12 +81,14 @@ export function EventDetail({ event, embedSrc, progress }: EventDetailProps) {
 
         <IdeasWorthRepeating ideas={event.ideas ?? []} index="04" />
 
+        {madeSlice ? <SliceCta index="05" /> : null}
+
         <section
           id="agenda"
           aria-labelledby="agenda-heading"
           className="scroll-mt-8"
         >
-          <SectionLabel id="agenda-heading" index="05" title="Agenda" />
+          <SectionLabel id="agenda-heading" index="06" title="Agenda" />
           <ol className="mt-6 flex max-w-xl flex-col gap-4">
             {agenda.map((step, index) => (
               <li key={step} className="flex gap-4">
@@ -97,11 +101,11 @@ export function EventDetail({ event, embedSrc, progress }: EventDetailProps) {
           </ol>
         </section>
 
-        <HowItWorks index="06" />
+        <HowItWorks index="07" />
 
         <Progress
           items={progress}
-          index="07"
+          index="08"
           emptyTitle="Nothing yet from this night."
           emptyBody="What we make together will show up here. Follow along — or join in."
         />
@@ -174,7 +178,7 @@ function TicketSection({ url }: { url?: string }) {
       aria-labelledby="tickets-heading"
       className="scroll-mt-8"
     >
-      <SectionLabel id="tickets-heading" index="08" title="Tickets" />
+      <SectionLabel id="tickets-heading" index="09" title="Tickets" />
       <div className="mt-6">
         {ticketUrl ? (
           <a
