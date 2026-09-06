@@ -75,12 +75,13 @@ What came out of a night. Shown on the homepage and on that night’s page.
       "id": "2026-09-05-site",
       "date": "2026-09-05",
       "episodeQuestion": "How can AI make us all money?",
-      "title": "Nightly 365 public site",
-      "link": "https://www.youtube.com/@Nightly365",
-      "note": "The house we gather in."
+      "title": "Slice",
+      "link": "https://slice-gules.vercel.app",
+      "note": "If a data center lands near you, see what a resident check could look like.",
+      "cta": "Try the number"
     }
   ]
 }
 ```
 
-`link` and `note` are optional. Newest dates show first.
+`link`, `note`, and `cta` are optional. `cta` is a button label next to a link — use it when people should try something, not only read a title. Newest dates show first.

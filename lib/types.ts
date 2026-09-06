@@ -68,6 +68,8 @@ export type Ship = {
   title: string;
   link?: string;
   note?: string;
+  /** Optional button label next to a link — e.g. “Try the number”. */
+  cta?: string;
 };
 
 export type ScheduleFile = {
