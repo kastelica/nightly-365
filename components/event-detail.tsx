@@ -1,7 +1,7 @@
-import Link from "next/link";
 import { Live } from "@/components/live";
 import { Progress } from "@/components/progress";
 import { SectionLabel } from "@/components/section-label";
+import { SiteBrandLink } from "@/components/site-mark";
 import { SiteFooter } from "@/components/site-footer";
 import { formatEpisodeDateLong, publicNightStatusLabel } from "@/lib/dates";
 import { SITE } from "@/lib/site";
@@ -20,12 +20,7 @@ export function EventDetail({ event, embedSrc, progress }: EventDetailProps) {
   return (
     <div className="mx-auto w-full max-w-3xl px-5 sm:px-8">
       <p className="pt-10">
-        <Link
-          href="/"
-          className="text-sm text-mute underline decoration-rule underline-offset-4 transition-colors hover:text-ink hover:decoration-lamp"
-        >
-          {SITE.name}
-        </Link>
+        <SiteBrandLink />
       </p>
 
       <header className="pt-10 sm:pt-14">

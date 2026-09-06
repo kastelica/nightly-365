@@ -1,5 +1,8 @@
 export const SITE = {
   name: "Nightly 365",
+  url: "https://nightly-365.vercel.app",
+  logo: "/brand/logo.png",
+  banner: "/brand/banner.png",
   eyebrow: "The show",
   pitch:
     "One hard question a night. Chat, callers, AI, and the community think it through. Join in, help, and follow along as ideas move forward.",

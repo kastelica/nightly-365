@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Instrument_Serif } from "next/font/google";
 import { SITE } from "@/lib/site";
 import "./globals.css";
@@ -15,13 +15,34 @@ const instrument = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE.url),
   title: SITE.name,
   description: `${SITE.pitch} ${SITE.when}.`,
   openGraph: {
     title: SITE.name,
     description: SITE.pitch,
     type: "website",
+    siteName: SITE.name,
+    locale: "en_US",
+    images: [
+      {
+        url: SITE.banner,
+        width: 1200,
+        height: 630,
+        alt: `${SITE.name} — ${SITE.whenClock}`,
+      },
+    ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE.name,
+    description: SITE.pitch,
+    images: [SITE.banner],
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0c0b09",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

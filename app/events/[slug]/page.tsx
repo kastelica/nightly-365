@@ -29,6 +29,14 @@ export async function generateMetadata({
       title: `${event.question} · ${SITE.name}`,
       description: event.blurb,
       type: "website",
+      images: [
+        {
+          url: SITE.banner,
+          width: 1200,
+          height: 630,
+          alt: `${SITE.name} — ${SITE.whenClock}`,
+        },
+      ],
     },
   };
 }
