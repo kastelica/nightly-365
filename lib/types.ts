@@ -24,6 +24,13 @@ export type NightEvent = {
   question: string;
   /** Short “what this night is” blurb. */
   blurb: string;
+  /**
+   * Pocket sub-questions. Prefer exactly three.
+   * Doors if the room stalls — not a script.
+   */
+  subquestions: string[];
+  /** Optional night-specific agenda. Falls back to SITE.agenda when omitted. */
+  agenda?: string[];
   /** How to join in / help. Falls back to SITE.join when omitted. */
   join?: string;
   /** Real ticket URL later. Omit or leave empty for “coming soon”. */

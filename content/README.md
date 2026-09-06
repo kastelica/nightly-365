@@ -29,6 +29,11 @@ One page per night (or special gathering) at `/events/[slug]`.
       "date": "2026-09-05",
       "question": "How can AI make us all money?",
       "blurb": "What this night is.",
+      "subquestions": [
+        "Who is “us all”?",
+        "What counts as money?",
+        "Who gets replaced?"
+      ],
       "join": "How to join in and help.",
       "ticketUrl": ""
     }
@@ -36,7 +41,14 @@ One page per night (or special gathering) at `/events/[slug]`.
 }
 ```
 
-`join` and `ticketUrl` are optional. Leave `ticketUrl` empty for “Tickets coming soon”.
+| Field | What to put |
+| --- | --- |
+| `subquestions` | Pocket sub-questions. Prefer exactly three. These are doors if the room stalls — not a script, not a checklist. |
+| `agenda` | Optional short bullet steps for that night. If omitted, the shared default agenda is used. |
+| `join` | Optional. How to join in and help. |
+| `ticketUrl` | Optional. Leave empty for “Tickets coming soon”. |
+
+The default agenda and the “How it works” copy live in the site helper language, so every night page can share them.
 
 ## `ships.json`
 
