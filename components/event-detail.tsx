@@ -1,3 +1,4 @@
+import { HowItWorks } from "@/components/how-it-works";
 import { Live } from "@/components/live";
 import { Progress } from "@/components/progress";
 import { SectionLabel } from "@/components/section-label";
@@ -16,6 +17,8 @@ type EventDetailProps = {
 export function EventDetail({ event, embedSrc, progress }: EventDetailProps) {
   const status = publicNightStatusLabel(event.date);
   const join = event.join ?? SITE.join;
+  const agenda = event.agenda?.length ? event.agenda : SITE.agenda;
+  const doors = (event.subquestions ?? []).filter((question) => question.trim());
 
   return (
     <div className="mx-auto w-full max-w-3xl px-5 sm:px-8">
@@ -57,9 +60,52 @@ export function EventDetail({ event, embedSrc, progress }: EventDetailProps) {
           </p>
         </section>
 
+        {doors.length > 0 ? (
+          <section
+            id="doors"
+            aria-labelledby="doors-heading"
+            className="scroll-mt-8"
+          >
+            <SectionLabel id="doors-heading" index="03" title="Doors" />
+            <p className="mt-6 max-w-xl text-sm leading-relaxed text-mute">
+              {SITE.doorsLead}
+            </p>
+            <ol className="mt-4 divide-y divide-rule">
+              {doors.map((question) => (
+                <li
+                  key={question}
+                  className="py-5 font-serif text-xl leading-snug text-ink sm:text-[1.35rem]"
+                >
+                  {question}
+                </li>
+              ))}
+            </ol>
+          </section>
+        ) : null}
+
+        <section
+          id="agenda"
+          aria-labelledby="agenda-heading"
+          className="scroll-mt-8"
+        >
+          <SectionLabel id="agenda-heading" index="04" title="Agenda" />
+          <ol className="mt-6 flex max-w-xl flex-col gap-4">
+            {agenda.map((step, index) => (
+              <li key={step} className="flex gap-4">
+                <span className="mt-1 text-[0.7rem] tracking-[0.22em] text-mute">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <p className="text-base leading-relaxed text-ink/90">{step}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
+
+        <HowItWorks index="05" />
+
         <Progress
           items={progress}
-          index="03"
+          index="06"
           emptyTitle="Nothing yet from this night."
           emptyBody="What we make together will show up here. Follow along — or join in."
         />
@@ -81,7 +127,7 @@ function TicketSection({ url }: { url?: string }) {
       aria-labelledby="tickets-heading"
       className="scroll-mt-8"
     >
-      <SectionLabel id="tickets-heading" index="04" title="Tickets" />
+      <SectionLabel id="tickets-heading" index="07" title="Tickets" />
       <div className="mt-6">
         {ticketUrl ? (
           <a
