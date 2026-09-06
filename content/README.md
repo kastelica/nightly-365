@@ -28,7 +28,14 @@ One page per night (or special gathering) at `/events/[slug]`.
       "slug": "how-can-ai-make-us-all-money",
       "date": "2026-09-05",
       "question": "How can AI make us all money?",
-      "blurb": "What this night is.",
+      "blurb": "Lead paragraph: why this night matters.",
+      "setup": [
+        "Optional extra sell paragraphs after the blurb."
+      ],
+      "expect": {
+        "before": "What to do before the night starts.",
+        "during": "What happens on the night."
+      },
       "subquestions": [
         "If AI grows the pie while taking jobs, how do people still get a slice?",
         "A citizens dividend from robot and compute permits — promising path or trap?",
@@ -43,6 +50,9 @@ One page per night (or special gathering) at `/events/[slug]`.
 
 | Field | What to put |
 | --- | --- |
+| `blurb` | Lead “why this night” paragraph. Also used for the page meta description. |
+| `setup` | Optional extra sell paragraphs after the blurb. Use when one string is too cramped. |
+| `expect` | Optional. `before` and `during` — what to expect leading up to and on the night. |
 | `subquestions` | Pocket sub-questions. Prefer exactly three. These are doors if the room stalls — not a script, not a checklist. |
 | `agenda` | Optional short bullet steps for that night. If omitted, the shared default agenda is used. |
 | `join` | Optional. How to join in and help. |

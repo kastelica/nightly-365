@@ -36,9 +36,7 @@ export function EventDetail({ event, embedSrc, progress }: EventDetailProps) {
         <p className="mt-6 text-sm tracking-wide text-lamp">
           {formatEpisodeDateLong(event.date)} · {SITE.whenClock}
         </p>
-        <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink/90">
-          {event.blurb}
-        </p>
+        <EventIntro event={event} />
       </header>
 
       <main className="mt-16 flex flex-col gap-20 pb-6 sm:mt-20 sm:gap-24">
@@ -115,6 +113,57 @@ export function EventDetail({ event, embedSrc, progress }: EventDetailProps) {
 
       <SiteFooter />
     </div>
+  );
+}
+
+function EventIntro({ event }: { event: NightEvent }) {
+  const setup = (event.setup ?? []).filter((paragraph) => paragraph.trim());
+  const before = event.expect?.before?.trim();
+  const during = event.expect?.during?.trim();
+  const hasExpect = Boolean(before || during);
+
+  return (
+    <>
+      <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink/90">
+        {event.blurb}
+      </p>
+      {setup.length > 0 ? (
+        <div className="mt-5 flex max-w-xl flex-col gap-5">
+          {setup.map((paragraph) => (
+            <p key={paragraph} className="text-base leading-relaxed text-ink/85">
+              {paragraph}
+            </p>
+          ))}
+        </div>
+      ) : null}
+      {hasExpect ? (
+        <div className="mt-10 max-w-xl border-t border-rule pt-8">
+          <p className="text-[0.7rem] tracking-[0.22em] text-mute uppercase">
+            What to expect
+          </p>
+          <div className="mt-6 flex flex-col gap-6">
+            {before ? (
+              <div>
+                <p className="text-sm tracking-wide text-lamp">
+                  Before you arrive
+                </p>
+                <p className="mt-2 text-base leading-relaxed text-ink/85">
+                  {before}
+                </p>
+              </div>
+            ) : null}
+            {during ? (
+              <div>
+                <p className="text-sm tracking-wide text-lamp">On the night</p>
+                <p className="mt-2 text-base leading-relaxed text-ink/85">
+                  {during}
+                </p>
+              </div>
+            ) : null}
+          </div>
+        </div>
+      ) : null}
+    </>
   );
 }
 

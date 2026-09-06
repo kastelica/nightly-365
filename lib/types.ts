@@ -17,13 +17,27 @@ export type Episode = {
   slug?: string;
 };
 
+export type NightExpect = {
+  /** What to do before the night starts. */
+  before?: string;
+  /** What happens during the night. */
+  during?: string;
+};
+
 export type NightEvent = {
   slug: string;
   /** Calendar date in Pacific Time, YYYY-MM-DD. */
   date: string;
   question: string;
-  /** Short “what this night is” blurb. */
+  /**
+   * Lead “why this night” paragraph. Also used for meta description.
+   * Add `setup` / `expect` when one string is too cramped.
+   */
   blurb: string;
+  /** Optional extra sell paragraphs after the blurb. */
+  setup?: string[];
+  /** Optional “what to expect” before and during the night. */
+  expect?: NightExpect;
   /**
    * Pocket sub-questions. Prefer exactly three.
    * Doors if the room stalls — not a script.

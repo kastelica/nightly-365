@@ -4,13 +4,21 @@
       "slug": "how-can-ai-make-us-all-money",
       "date": "2026-09-05",
       "question": "How can AI make us all money?",
-      "blurb": "Opening night. One hard question, and a room of people willing to think it through together — chat, callers, and anyone who wants to help. Not a lecture. A gathering.",
+      "blurb": "Opening night. AI may grow the pie while taking the jobs people have used to earn a slice. If machines do more of the making, how do the rest of us still get paid — and who is “us all”? Tonight we sit with that question as a room, not as an audience.",
+      "setup": [
+        "One path we may walk is a citizens dividend from robot and compute permits: a check that follows the machines, not the old job. It could be a promising way to share what AI creates. It could be a trap. We will treat it as a live thread — something to help work through — not a finished answer.",
+        "Nightly 365 is collaborative. The host holds the question. Chat, callers, and the community think it through together. You are invited to help, to doubt out loud, or to follow along. Not a lecture. A gathering."
+      ],
+      "expect": {
+        "before": "Show up a few minutes early. Open the chat. Bring a thought, a doubt, or a small idea — whatever you are carrying is enough. If you would rather listen, that helps too. The night is free to watch.",
+        "during": "We open, then sit with the question long enough to feel why it is worth a night. We think together. If we need a way in, three doors are ready: how people still get a slice, whether a citizens dividend from permits holds, and what happens to work, status, and politics when the check shows up. If the room is already moving, we skip the doors. We close with one thing we found, any progress from the night, and a look at tomorrow."
+      },
       "subquestions": [
         "If AI grows the pie while taking jobs, how do people still get a slice?",
         "A citizens dividend from robot and compute permits — promising path or trap?",
         "When the check shows up, what happens to work, status, and politics?"
       ],
-      "join": "Come to the live chat on YouTube. Bring a thought, a doubt, or a small idea. Help us work the question — or follow along and see what comes out of tonight."
+      "join": "Come to the live chat on YouTube. Help us work the question — or follow along and see what comes out of tonight. If you have something you want to say, the room will make space. First time is welcome."
     }
   ]
 }
