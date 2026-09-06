@@ -1,4 +1,5 @@
 import { HowItWorks } from "@/components/how-it-works";
+import { IdeasWorthRepeating } from "@/components/ideas-worth-repeating";
 import { Live } from "@/components/live";
 import { Progress } from "@/components/progress";
 import { SectionLabel } from "@/components/section-label";
@@ -76,12 +77,14 @@ export function EventDetail({ event, embedSrc, progress }: EventDetailProps) {
           </section>
         ) : null}
 
+        <IdeasWorthRepeating ideas={event.ideas ?? []} index="04" />
+
         <section
           id="agenda"
           aria-labelledby="agenda-heading"
           className="scroll-mt-8"
         >
-          <SectionLabel id="agenda-heading" index="04" title="Agenda" />
+          <SectionLabel id="agenda-heading" index="05" title="Agenda" />
           <ol className="mt-6 flex max-w-xl flex-col gap-4">
             {agenda.map((step, index) => (
               <li key={step} className="flex gap-4">
@@ -94,11 +97,11 @@ export function EventDetail({ event, embedSrc, progress }: EventDetailProps) {
           </ol>
         </section>
 
-        <HowItWorks index="05" />
+        <HowItWorks index="06" />
 
         <Progress
           items={progress}
-          index="06"
+          index="07"
           emptyTitle="Nothing yet from this night."
           emptyBody="What we make together will show up here. Follow along — or join in."
         />
@@ -171,7 +174,7 @@ function TicketSection({ url }: { url?: string }) {
       aria-labelledby="tickets-heading"
       className="scroll-mt-8"
     >
-      <SectionLabel id="tickets-heading" index="07" title="Tickets" />
+      <SectionLabel id="tickets-heading" index="08" title="Tickets" />
       <div className="mt-6">
         {ticketUrl ? (
           <a

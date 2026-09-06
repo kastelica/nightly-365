@@ -57,7 +57,7 @@ The homepage and each night’s page read from a few content files. Change a fil
 | File | What it is |
 | --- | --- |
 | [`content/schedule.json`](content/schedule.json) | Upcoming nights: date (PT), question, `next` / `queued` / `aired`, optional notes, optional `slug` |
-| [`content/events.json`](content/events.json) | Night pages at `/events/[slug]`: question, blurb, optional setup and expect, pocket doors, how to join, optional agenda and ticket link |
+| [`content/events.json`](content/events.json) | Night pages at `/events/[slug]`: question, blurb, optional setup and expect, pocket doors, how to join, optional ideas worth repeating, optional agenda and ticket link |
 | [`content/ships.json`](content/ships.json) | What came out of a night: date, question, title, link, note |
 
 1. Edit the file.

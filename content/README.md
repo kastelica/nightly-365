@@ -42,6 +42,9 @@ One page per night (or special gathering) at `/events/[slug]`.
         "When the check shows up, what happens to work, status, and politics?"
       ],
       "join": "How to join in and help.",
+      "ideas": [
+        "A short line people can repeat and pass on."
+      ],
       "ticketUrl": ""
     }
   ]
@@ -56,6 +59,7 @@ One page per night (or special gathering) at `/events/[slug]`.
 | `subquestions` | Pocket sub-questions. Prefer exactly three. These are doors if the room stalls — not a script, not a checklist. |
 | `agenda` | Optional short bullet steps for that night. If omitted, the shared default agenda is used. |
 | `join` | Optional. How to join in and help. |
+| `ideas` | Optional. Sticky one-liners people can repeat. Shown on that night’s page and on the homepage. Public seeds — not a changelog. |
 | `ticketUrl` | Optional. Leave empty for “Tickets coming soon”. |
 
 The default agenda and the “How it works” copy live in the site helper language, so every night page can share them.

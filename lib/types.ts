@@ -47,6 +47,11 @@ export type NightEvent = {
   agenda?: string[];
   /** How to join in / help. Falls back to SITE.join when omitted. */
   join?: string;
+  /**
+   * Sticky one-liners people can repeat. Public mindset seeds —
+   * not a changelog. Omit when a night has none yet.
+   */
+  ideas?: string[];
   /** Real ticket URL later. Omit or leave empty for “coming soon”. */
   ticketUrl?: string;
 };
