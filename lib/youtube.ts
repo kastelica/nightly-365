@@ -65,3 +65,24 @@ export function toEmbedSrc(value: string): string {
 
   return value;
 }
+
+/**
+ * Player-only tweaks after a user gesture. Does not change which
+ * source getLiveEmbedSrc() already chose.
+ */
+export function withLivePlayerSrc(src: string, origin: string): string {
+  try {
+    const url = new URL(src);
+    const host = url.hostname.replace(/^www\./, "");
+    if (host === "youtube.com") {
+      url.hostname = "www.youtube-nocookie.com";
+    }
+    if (origin && !url.searchParams.has("origin")) {
+      url.searchParams.set("origin", origin);
+    }
+    url.searchParams.set("autoplay", "1");
+    return url.toString();
+  } catch {
+    return src;
+  }
+}
