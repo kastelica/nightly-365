@@ -42,3 +42,10 @@ export function getEvents(): NightEvent[] {
 export function getEvent(slug: string): NightEvent | undefined {
   return eventsData.events.find((event) => event.slug === slug);
 }
+
+/** Public one-liners from every night page that has them. */
+export function getPublicIdeas(): string[] {
+  return getEvents().flatMap((event) =>
+    (event.ideas ?? []).filter((idea) => idea.trim()),
+  );
+}

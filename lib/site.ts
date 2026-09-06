@@ -15,6 +15,8 @@ export const SITE = {
   benevolence: "Think clearly. Do something kind.",
   doorsLead:
     "If the room stalls, these are doors. Never a checklist. If the room is hot, skip them.",
+  ideasLead:
+    "Put these in people’s heads. Short lines you can repeat and pass on. This is how a good idea travels.",
   /** Shared spine for every night unless an event sets its own agenda. */
   agenda: [
     "Open (~2 min) — the show and tonight’s question",

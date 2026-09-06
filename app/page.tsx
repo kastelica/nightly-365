@@ -1,15 +1,17 @@
 import { Hero } from "@/components/hero";
+import { IdeasWorthRepeating } from "@/components/ideas-worth-repeating";
 import { Live } from "@/components/live";
 import { Progress } from "@/components/progress";
 import { Schedule } from "@/components/schedule";
 import { SiteFooter } from "@/components/site-footer";
-import { getShips, getUpcomingEpisodes } from "@/lib/content";
+import { getPublicIdeas, getShips, getUpcomingEpisodes } from "@/lib/content";
 import { SITE } from "@/lib/site";
 import { getLiveEmbedSrc } from "@/lib/youtube";
 
 export default function Home() {
   const episodes = getUpcomingEpisodes(14);
   const progress = getShips();
+  const ideas = getPublicIdeas();
   const embedSrc = getLiveEmbedSrc();
 
   return (
@@ -24,7 +26,8 @@ export default function Home() {
       <main className="mt-20 flex flex-col gap-20 pb-6 sm:mt-24 sm:gap-24">
         <Live embedSrc={embedSrc} />
         <Schedule episodes={episodes} />
-        <Progress items={progress} />
+        <IdeasWorthRepeating ideas={ideas} />
+        <Progress items={progress} index="04" />
       </main>
       <p className="sr-only">
         {SITE.name} streams {SITE.whenShort}.
